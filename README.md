@@ -1,52 +1,51 @@
 <!-- Logo o imagen del proyecto -->
 <p align="center">
-  <img src="https://your-image-url.com/logo.png" alt="Logo del Proyecto" width="200">
+  <img src="resources\img_rag.png" alt="Logo del Proyecto" width="200">
 </p>
 
 # Retrieval-Augmented Generation (RAG)
 
-## Descripción
+## Description
 
 In this repo, I have created a new project named Retrieval-Augmented Generation (RAG). This project focuses on enhancing the capabilities of language models by integrating information retrieval techniques, enabling more accurate and contextually relevant responses by sourcing information from external documents or databases.
 
-## Tabla de Contenidos
+## Table of Contents
 
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Documentación](#documentación)
-- [Contribuyendo](#contribuyendo)
-- [Licencia](#licencia)
-- [Contacto](#contacto)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## Instalación
+## Installation
 
-Sigue estos pasos para configurar el entorno de desarrollo en tu máquina local:
+Follow these steps to set up the development environment on your local machine:
 
-1. Clona el repositorio:
+1. Clone the repository:
 
     ```bash
-    git clone https://github.com/tu-usuario/mi-proyecto-rag.git
-    cd mi-proyecto-rag
+    git clone https://github.com/your-user/my-rag-project.git
+    cd my-rag-project
     ```
 
-2. Crea y activa un entorno virtual:
+2. Create and activate a virtual environment:
 
     ```bash
     python -m venv env
-    source env/bin/activate  # En macOS/Linux
-    .\env\Scripts\activate   # En Windows
+    source env/bin/activate # macOS/Linux
+    .\env\Scripts\activate # Windows
     ```
 
-3. Instala las dependencias necesarias:
+3. Install the necessary dependencies:
 
     ```bash
     pip install -r requirements.txt
-    ```
 
-## Uso
+## Usage
 
-Después de instalar las dependencias, puedes iniciar la aplicación utilizando `Streamlit`:
+After installing the dependencies, you can start the application using `Streamlit`:
 
-```bash
-streamlit run src/main.py
+    ```bash
+    streamlit run src/main.py
