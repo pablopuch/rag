@@ -49,3 +49,6 @@ After installing the dependencies, you can start the application using `Streamli
 
     ```bash
     streamlit run src/main.py
+
+
+https://github.com/fcori47/rag_basico/blob/master/Clase%202%20-%20VectorDB.ipynb
