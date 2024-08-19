@@ -15,7 +15,7 @@ In this repo, I have created a new project named Retrieval-Augmented Generation 
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Documentation](#documentation)
-- [Contributing](#contributing)
+- [Resources](#Resources)
 - [License](#license)
 - [Contact](#contact)
 
@@ -26,22 +26,28 @@ Follow these steps to set up the development environment on your local machine:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-user/my-rag-project.git
-    cd my-rag-project
+        git clone https://github.com/your-user/my-rag-project.git
+        cd my-rag-project
     ```
 
 2. Create and activate a virtual environment:
 
     ```bash
-    python -m venv env
-    source env/bin/activate # macOS/Linux
-    .\env\Scripts\activate # Windows
+        python -m venv env
+        source env/bin/activate # macOS/Linux
+        .\env\Scripts\activate # Windows
     ```
 
 3. Install the necessary dependencies:
 
     ```bash
-    pip install -r requirements.txt
+        pip install -r requirements.txt
+
+4. Generate requirements.txt
+
+    ```bash
+        pip freeze > requirements.txt
+    ```
 
 ## Usage
 
@@ -51,4 +57,19 @@ After installing the dependencies, you can start the application using `Streamli
     streamlit run src/main.py
 
 
+## Project Structure
+
+<p align="center">
+  <img src="resources\sheme.png" alt="Logo del Proyecto" width="200">
+</p>
+
+
+
+## Resources
+
+https://www.youtube.com/watch?v=ApZvYZIwSeE&list=PLCwl8iPaU6OLkMwhpsKmKxgb9kZqWZyYh&pp=iAQB
+
 https://github.com/fcori47/rag_basico/blob/master/Clase%202%20-%20VectorDB.ipynb
+
+https://medium.com/the-ai-forum/rag-on-complex-pdf-using-llamaparse-langchain-and-groq-5b132bd1f9f3
+
