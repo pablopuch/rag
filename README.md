@@ -23,31 +23,25 @@ In this repo, I have created a new project named Retrieval-Augmented Generation 
 
 Follow these steps to set up the development environment on your local machine:
 
-1. Clone the repository:
+  Clone the repository:
+  
+    git clone https://github.com/your-user/my-rag-project.git
+    cd my-rag-project
 
-    ```bash
-        git clone https://github.com/your-user/my-rag-project.git
-        cd my-rag-project
-    ```
+  Create and activate a virtual environment:
+  
+    python -m venv env
+    source env/bin/activate # macOS/Linux
+    .\env\Scripts\activate # Windows
 
-2. Create and activate a virtual environment:
+  Install the necessary dependencies:
+  
+    pip install -r requirements.txt
 
-    ```bash
-        python -m venv env
-        source env/bin/activate # macOS/Linux
-        .\env\Scripts\activate # Windows
-    ```
-
-3. Install the necessary dependencies:
-
-    ```bash
-        pip install -r requirements.txt
-
-4. Generate requirements.txt
-
-    ```bash
-        pip freeze > requirements.txt
-    ```
+  Generate requirements.txt
+  
+    pip freeze > requirements.txt
+    
 
 ## Usage
 
