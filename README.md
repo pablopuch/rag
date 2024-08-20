@@ -25,8 +25,8 @@ Follow these steps to set up the development environment on your local machine:
 
   Clone the repository:
   
-    git clone https://github.com/your-user/my-rag-project.git
-    cd my-rag-project
+    git clone https://github.com/pablopuch/rag.git
+    cd rag
 
   Create and activate a virtual environment:
   
@@ -47,14 +47,13 @@ Follow these steps to set up the development environment on your local machine:
 
 After installing the dependencies, you can start the application using `Streamlit`:
 
-    ```bash
     streamlit run src/main.py
 
 
 ## Project Structure
 
 <p align="center">
-  <img src="resources\sheme.png" alt="Logo del Proyecto" width="200">
+  <img src="resources\scheme.jpg" alt="Logo del Proyecto" width="200">
 </p>
 
 
