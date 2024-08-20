@@ -72,3 +72,5 @@ https://github.com/fcori47/rag_basico/blob/master/Clase%202%20-%20VectorDB.ipynb
 https://medium.com/the-ai-forum/rag-on-complex-pdf-using-llamaparse-langchain-and-groq-5b132bd1f9f3
 
 https://www.youtube.com/watch?v=Mg3xOWWaF0c&t=999s
+
+https://python.langchain.com/v0.2/docs/how_to/semantic-chunker/

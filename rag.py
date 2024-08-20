@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain_chroma import Chroma
+from langchain.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.chat_models import ChatOllama
 from langchain.chains import create_retrieval_chain
@@ -37,7 +37,7 @@ def obtener_respuesta(pregunta, llm, chroma_db, prompt):
 # Texto del prompt inicial
 texto_prompt = """Tú eres un asistente para tareas de respuesta a preguntas. 
 Usa los siguientes fragmentos de contexto recuperado para responder 
-la pregunta. Si no sabes la respuesta, di que no sabes. Usa un máximo de tres oraciones y mantén la respuesta concisa."""
+la pregunta. Si no sabes la respuesta, di que no sabes. Mantén la respuesta concisa."""
 
 # Aplicación de Streamlit
 st.title("Asistente de Preguntas")
