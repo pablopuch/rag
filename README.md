@@ -23,16 +23,20 @@ In this repo, I have created a new project named Retrieval-Augmented Generation 
 
 Follow these steps to set up the development environment on your local machine:
 
-  Clone the repository:
-  
-    git clone https://github.com/pablopuch/rag.git
-    cd rag
+1. Clone the repository:
 
-  Create and activate a virtual environment:
-  
-    python -m venv env
-    source env/bin/activate # macOS/Linux
-    .\env\Scripts\activate # Windows
+    ```bash
+        git clone https://github.com/your-user/my-rag-project.git
+        cd my-rag-project
+    ```
+
+2. Create and activate a virtual environment:
+
+    ```bash
+        python -m venv env
+        source env/bin/activate # macOS/Linux
+        .\env\Scripts\activate # Windows
+    ```
 
   Install the necessary dependencies:
   
