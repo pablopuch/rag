@@ -45,6 +45,17 @@ Follow these steps to set up the development environment on your local machine:
   
     pip freeze > requirements.txt
 
+  Create de file doc and put your pdfs in this file.
+
+    mkdir doc
+
+  Run ollama serve
+
+    ollama run llama3.1:latest
+
+  Initialize with the command
+
+    streamlit run rag.py
 
     
 
