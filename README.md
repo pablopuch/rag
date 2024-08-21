@@ -61,10 +61,6 @@ Follow these steps to set up the development environment on your local machine:
 
 ## Usage
 
-After installing the dependencies, you can start the application using `Streamlit`:
-
-    streamlit run rag.py
-
 
 ## Project Structure
 
