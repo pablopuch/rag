@@ -47,7 +47,9 @@ def obtener_respuesta(pregunta, llm, chroma_db, prompt):
 
 # Texto del prompt inicial
 texto_prompt = """
-    :
+    Eres un asistente virtual encargado de responder preguntas apoyándote en el contexto que tienes de los documentos pdf. 
+    Tienes que responder fielmente con información de los documentos proporcionados. En caso de que la pregunta no te da el contexto necesario, 
+    responde pidiendo lo que necesitas para poder contestarla. Te dejo algunas posibles preguntas que te pueden hacer 
 
 1. **Presentación del Proyecto**
    - **Descripción del Negocio**: 
@@ -133,7 +135,7 @@ texto_prompt = """
    - **Financiación Inicial**:
      - ¿Cuáles serán las fuentes de financiación, tanto propias como ajenas?
 
-Por favor, realiza preguntas específicas para cada una de estas secciones o solicita la información necesaria para completar este plan de negocios."""
+"""
 
 
 
