@@ -1,4 +1,4 @@
 import gradio as gr
-from common.rag import obtener_respuesta
+from common.rag import respuesta
 
-gr.ChatInterface(obtener_respuesta).launch()
+gr.ChatInterface(respuesta).launch()

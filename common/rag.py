@@ -1,4 +1,3 @@
-import streamlit as st
 from langchain.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.chat_models import ChatOllama
@@ -6,43 +5,18 @@ from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 
-# Cacheo del modelo para evitar recargas innecesarias
-@st.cache_data
-def cargar_modelo():
-    return ChatOllama(model='llama3.1:latest', temperature=0)
-
-llm = cargar_modelo()
-
-# Configuración de Chroma con embeddings más ligeros
-def configurar_embeddings():
-    embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')
-    embeddings.client.max_seq_length = 128  # Ajustar la longitud de la secuencia después de la creación
-    return embeddings
-
-chroma_local = Chroma(
-    persist_directory="./vectordb", 
-    embedding_function=configurar_embeddings()
-)
+llm = ChatOllama(model='llama3.1:latest', temperature=0)
+chroma_local = Chroma(persist_directory="./vectordb", embedding_function=HuggingFaceEmbeddings(model_name='all-MiniLM-L6-v2'))
 
 # Función para crear el prompt
 def prompt(texto):
     system_prompt = f"{texto}\n\n{{context}}"
-    prompt_template = ChatPromptTemplate.from_messages(
+    prompt = ChatPromptTemplate.from_messages(
         [
             ("system", system_prompt),
             ("human", "{input}"),
         ])
-    return prompt_template
-
-# Función para obtener respuesta
-def obtener_respuesta(pregunta, llm, chroma_db, prompt):
-    retriever = chroma_db.as_retriever() 
-    chain = create_stuff_documents_chain(llm, prompt)
-    rag = create_retrieval_chain(retriever, chain)
-    
-    results = rag.invoke({"input": pregunta})
-    return results['answer']
-
+    return prompt
 
 
 # Texto del prompt inicial
@@ -134,24 +108,14 @@ texto_prompt = """
      - ¿Por qué es necesaria esta inversión?
    - **Financiación Inicial**:
      - ¿Cuáles serán las fuentes de financiación, tanto propias como ajenas?
-
 """
 
 
+def respuesta(pregunta, history):
+    retriever = chroma_local.as_retriever()
 
-
-# Aplicación de Streamlit
-st.title("Asistente de Chat")
-
-# Inicializar el estado de la sesión
-if 'historial' not in st.session_state:
-    st.session_state['historial'] = []
-
-# Input de la pregunta del usuario
-pregunta = st.text_input("Escribe tu pregunta aquí:")
-
-# Almacenar la pregunta y respuesta en el historial
-if st.button("Enviar"):
-    if pregunta:
-        respuesta_obtenida = obtener_respuesta(pregunta, llm, chroma_local, prompt(texto_prompt))
-        st.session_state['historial'].append({"pregunta": pregunta, "respuesta": respuesta_obtenida.get('answer', 'Lo siento, no pude encontrar una respuesta adecuada.')})
+    chain = create_stuff_documents_chain(llm, prompt(texto_prompt))
+    rag = create_retrieval_chain(retriever, chain)
+    
+    results = rag.invoke({"input": pregunta})
+    return results['answer']
