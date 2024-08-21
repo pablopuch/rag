@@ -55,7 +55,7 @@ Follow these steps to set up the development environment on your local machine:
 
   Initialize with the command
 
-    streamlit run rag.py
+    py app.py
 
     
 
