@@ -41,15 +41,13 @@ def obtener_respuesta(pregunta, llm, chroma_db, prompt):
     rag = create_retrieval_chain(retriever, chain)
     
     results = rag.invoke({"input": pregunta})
-    return results
+    return results['answer']
 
 
 
 # Texto del prompt inicial
 texto_prompt = """
-    Hola, asistente. Necesito tu ayuda para crear un plan de negocios completo y detallado para mi nueva empresa. 
-    A continuación, te proporcionaré una estructura que debes seguir para cada sección del plan. Por favor, hazme 
-    preguntas para obtener la información necesaria y ayúdame a desarrollar respuestas detalladas. Aquí tienes alguna posibles preguntas que te puden hacer:
+    :
 
 1. **Presentación del Proyecto**
    - **Descripción del Negocio**: 
@@ -155,32 +153,3 @@ if st.button("Enviar"):
     if pregunta:
         respuesta_obtenida = obtener_respuesta(pregunta, llm, chroma_local, prompt(texto_prompt))
         st.session_state['historial'].append({"pregunta": pregunta, "respuesta": respuesta_obtenida.get('answer', 'Lo siento, no pude encontrar una respuesta adecuada.')})
-
-# Mostrar el historial de la conversación
-for i, mensaje in enumerate(st.session_state['historial']):
-    st.markdown(f"<div style='text-align: left; margin-bottom: 10px;'><strong>Usuario:</strong> {mensaje['pregunta']}</div>", unsafe_allow_html=True)
-    st.markdown(f"<div style='text-align: right; margin-bottom: 10px; background-color: #DCF8C6; padding: 10px; border-radius: 10px;'><strong>Asistente:</strong> {mensaje['respuesta']}</div>", unsafe_allow_html=True)
-
-# Estilo adicional para la interfaz
-st.markdown("""
-    <style>
-        div[data-testid="stTextInput"] > div > input {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            width: 100%;
-        }
-        div[data-testid="stTextInput"] > div > button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-left: 5px;
-        }
-        div[data-testid="stTextInput"] > div > button:hover {
-            background-color: #45a049;
-        }
-    </style>
-""", unsafe_allow_html=True)
