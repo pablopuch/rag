@@ -36,7 +36,7 @@ def prompt(texto):
 
 # Función para obtener respuesta
 def obtener_respuesta(pregunta, llm, chroma_db, prompt):
-    retriever = chroma_db.as_retriever(search_kwargs={"k": 5})  # Limita el número de documentos recuperados
+    retriever = chroma_db.as_retriever() 
     chain = create_stuff_documents_chain(llm, prompt)
     rag = create_retrieval_chain(retriever, chain)
     
