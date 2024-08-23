@@ -1,11 +1,11 @@
 <!-- Logo o imagen del proyecto -->
 <p align="center">
-  <img src="resources\img_rag.png" alt="Logo del Proyecto" width="200">
+  <img src="resources\img_rag.png" alt="Logo del Proyecto" width="600">
 </p>
 
 # Retrieval-Augmented Generation (RAG)
 
-## Description
+### Description
 
 In this repo, I have created a new project named Retrieval-Augmented Generation (RAG). This project focuses on enhancing the capabilities of language models by integrating information retrieval techniques, enabling more accurate and contextually relevant responses by sourcing information from external documents or databases.
 
@@ -16,8 +16,6 @@ In this repo, I have created a new project named Retrieval-Augmented Generation 
 - [Project Structure](#project-structure)
 - [Documentation](#documentation)
 - [Resources](#Resources)
-- [License](#license)
-- [Contact](#contact)
 
 ## Installation
 
@@ -41,10 +39,6 @@ Follow these steps to set up the development environment on your local machine:
     pip install -r requirements.txt
 
 
-  Generate requirements.txt
-  
-    pip freeze > requirements.txt
-
   Create de file doc and put your pdfs in this file.
 
     mkdir doc
@@ -62,11 +56,14 @@ Follow these steps to set up the development environment on your local machine:
 ## Usage
 
 
+
 ## Project Structure
 
 <p align="center">
   <img src="resources\scheme.jpg" alt="Logo del Proyecto" width="800">
 </p>
+
+## Documentation
 
 
 
