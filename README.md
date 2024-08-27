@@ -1,6 +1,6 @@
 <!-- Logo o imagen del proyecto -->
 <p align="center">
-  <img src="resources\img_rag.png" alt="Logo del Proyecto" width="600">
+  <img src="resources\img_rag.png" alt="Logo del Proyecto" width="800">
 </p>
 
 # Retrieval-Augmented Generation (RAG)
@@ -78,3 +78,9 @@ https://medium.com/the-ai-forum/rag-on-complex-pdf-using-llamaparse-langchain-an
 https://www.youtube.com/watch?v=Mg3xOWWaF0c&t=999s
 
 https://python.langchain.com/v0.2/docs/how_to/semantic-chunker/
+
+https://medium.com/the-ai-forum/semantic-chunking-for-rag-f4733025d5f5
+
+https://huggingface.co/spaces/Nymbo/chunk_visualizer
+
+

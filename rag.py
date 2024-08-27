@@ -8,7 +8,8 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 
 llm = ChatOllama(model='llama3.1:latest', temperature=0)
-chroma_local = Chroma(persist_directory="./vectordb", embedding_function=HuggingFaceEmbeddings(model_name='all-MiniLM-L6-v2'))
+
+chroma_local = Chroma(persist_directory="./vectordb2", embedding_function=HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2'))
 
 # Función para crear el prompt
 def prompt(texto):
@@ -23,10 +24,9 @@ def prompt(texto):
 
 # Texto del prompt inicial
 texto_prompt = """
-    Eres un asistente virtual encargado de responder preguntas apoyándote en el contexto que tienes de los documentos pdf. 
-    Tienes que responder fielmente con información de los documentos proporcionados. 
-    En caso de que la pregunta no te da el contexto necesario, responde pidiendo lo que necesitas para poder contestarla.
-    Simpre responde con la informacíon del contexto. No respondas que no tienes acceso a la informacíon.
+    "Usted es un asistente para tareas de respuesta a preguntas. Utiliza los siguientes elementos del contexto recuperado para responder 
+    a la pregunta. Responde fielmente con la información pasada por el contexto.Si no conoce la respuesta, diga simplemente que necesitas
+    para poder responder. Utiliza y procura que la respuesta sea concisa"
 """
 
 

@@ -23,4 +23,5 @@ __pycache__/
 *.temp
 
 vectordb/
+vectordb2/
 doc/
